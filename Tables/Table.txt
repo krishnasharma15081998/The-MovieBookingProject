@@ -1,0 +1,76 @@
+SQL> desc theater;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ THEATER_ID                                NOT NULL NUMBER(10)
+ MANAGER_CONTACT                                    VARCHAR2(255 CHAR)
+ MANAGER_NAME                                       VARCHAR2(255 CHAR)
+ THEATER_CITY                                       VARCHAR2(255 CHAR)
+ THEATER_NAME                                       VARCHAR2(255 CHAR)
+
+SQL> desc movie;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ MOVIE_ID                                  NOT NULL NUMBER(10)
+ MOVIE_DIRECTOR                                     VARCHAR2(255 CHAR)
+ MOVIE_GENRE                                        VARCHAR2(255 CHAR)
+ MOVIE_LENGTH                              NOT NULL NUMBER(10)
+ MOVIE_NAME                                         VARCHAR2(255 CHAR)
+ MOVIE_RELEASE_DATE                                 TIMESTAMP(6)
+ THEATER_FK                                         NUMBER(10)
+
+SQL> desc screen;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SCREEN_ID                                 NOT NULL NUMBER(10)
+ SCREEN_NAME                                        VARCHAR2(255 CHAR)
+ SEAT_COLUMNS                              NOT NULL NUMBER(10)
+ SEAT_ROWS                                 NOT NULL NUMBER(10)
+ THEATER_FK                                         NUMBER(10)
+
+SQL> desc booking;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ BOOKING_ID                                NOT NULL NUMBER(10)
+ BOOKING_DATE                                       DATE
+ MOVIE_ID                                  NOT NULL NUMBER(10)
+ SHOW_ID                                   NOT NULL NUMBER(10)
+ TICKET                                             RAW(255)
+ TOTAL_COST                                NOT NULL FLOAT(126)
+ TRANSACTION_ID                            NOT NULL NUMBER(10)
+
+SQL> desc admin;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ USER_ID                                   NOT NULL NUMBER(10)
+ ADMIN_CONTACT                                      VARCHAR2(255 CHAR)
+ ADMIN_NAME                                         VARCHAR2(255 CHAR)
+ PASSWORD                                           VARCHAR2(255 CHAR)
+
+SQL> desc seat;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SEAT_ID                                   NOT NULL NUMBER(10)
+ SEAT_PRICE                                NOT NULL FLOAT(126)
+ SEAT_STATUS                                        NUMBER(10)
+ SHOW_FK                                            NUMBER(10)
+ BOOKING_FK                                         NUMBER(10)
+
+SQL> desc ticket;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ TICKET_ID                                 NOT NULL NUMBER(10)
+ NO_OF_SEATS                               NOT NULL NUMBER(10)
+ SCREEN_NAME                                        VARCHAR2(255 CHAR)
+ TICKET_STATUS                             NOT NULL NUMBER(1)
+
+SQL> desc show;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SHOW_ID                                   NOT NULL NUMBER(10)
+ SCREEN_ID                                 NOT NULL NUMBER(10)
+ SHOW_END_TIME                                      DATE
+ SHOW_NAME                                          VARCHAR2(255 CHAR)
+ SHOW_START_TIME                                    DATE
+ THEATER_ID                                NOT NULL NUMBER(10)
+ SCREEN_FK                                          NUMBER(10)
+
